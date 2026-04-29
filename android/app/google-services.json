@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "133059811715",
+    "project_id": "futvision-mobile",
+    "storage_bucket": "futvision-mobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133059811715:android:fe0af1a35b4c5e6ee4feb6",
+        "android_client_info": {
+          "package_name": "com.example.futvision_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133059811715-9gdelkte740ic75v7rrh74tbi1gubomv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbt8walZdUypq_mpjc-39dBNBTGUY1X8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133059811715-9gdelkte740ic75v7rrh74tbi1gubomv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
