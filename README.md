@@ -1,124 +1,66 @@
 # ⚽ FutVision Mobile
 
-Aplicação mobile desenvolvida em **Flutter** para explorar o universo do futebol mundial. Consome dados em tempo real da **TheSportsDB API** e possui integração com **Firebase** (autenticação e favoritos).
+📂 **Repositório no GitHub:**  
+👉 https://github.com/EduardoColombari/FutVision_Mobile
+
+📦 **Download do APK:**  
+👉 https://github.com/EduardoColombari/FutVision_Mobile/releases/tag/v1.0.0
 
 ---
 
-## 📱 Prints da Aplicação
+## 📖 Sobre o Projeto
 
-| Login | Home | Classificação |
-|-------|------|---------------|
-| ![login](prints/login.png) | ![home](prints/home.png) | ![standings](prints/standings.png) |
+O **FutVision Mobile** é uma aplicação mobile desenvolvida em **Flutter** que permite visualizar, explorar e comparar informações de futebol em tempo real.
 
-| Jogadores | Detalhes do Time | Favoritos |
-|-----------|-----------------|-----------|
-| ![players](prints/players.png) | ![team](prints/team.png) | ![favorites](prints/favorites.png) |
+A aplicação consome dados de uma API externa de futebol para fornecer informações detalhadas sobre:
 
----
+- Ligas  
+- Times  
+- Jogadores  
+- Partidas  
 
-## 🏗️ Arquitetura da Aplicação
-
-```
-futvision_mobile/
-├── lib/
-│   ├── main.dart                        # Entrada do app, tema, rotas (go_router)
-│   ├── services/
-│   │   ├── football_api.dart            # Chamadas à TheSportsDB API (http)
-│   │   ├── auth_service.dart            # Firebase Authentication
-│   │   └── favorites_service.dart       # Cloud Firestore (favoritos)
-│   ├── screens/
-│   │   ├── login_screen.dart            # Tela de login/cadastro
-│   │   ├── home_screen.dart             # Home com busca de times e ligas
-│   │   ├── standings_screen.dart        # Classificação por liga/temporada
-│   │   ├── matches_screen.dart          # Próximos jogos
-│   │   ├── players_screen.dart          # Busca de jogadores
-│   │   ├── compare_screen.dart          # Comparar dois times
-│   │   ├── favorites_screen.dart        # Favoritos salvos no Firestore
-│   │   ├── team_details_screen.dart     # Detalhes do time + elenco + galeria
-│   │   ├── player_details_screen.dart   # Detalhes do jogador + galeria
-│   │   └── about_screen.dart            # Sobre o projeto
-│   ├── widgets/
-│   │   ├── league_card.dart             # Card de liga reutilizável
-│   │   ├── team_card.dart               # Card de time reutilizável
-│   │   └── favorite_button.dart         # Botão de favorito reutilizável
-│   └── utils/
-│       └── translations.dart            # Traduções (ligas, posições, países)
-└── android/
-    └── app/
-        └── google-services.json         # Configuração Firebase Android
-```
-
-### Fluxo de dados
-
-```
-Usuário
-  │
-  ├── [Não autenticado] ──► LoginScreen ──► Firebase Auth
-  │
-  └── [Autenticado]
-        │
-        ├── TheSportsDB API ──► football_api.dart ──► Screens
-        │
-        └── Cloud Firestore ──► favorites_service.dart ──► FavoritesScreen
-```
+O projeto foi criado com foco em **performance, organização de código e experiência do usuário**, utilizando conceitos modernos de desenvolvimento mobile, além de integração com **Firebase** para autenticação e armazenamento de favoritos.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| Flutter | 3.x | Framework mobile |
-| Dart | 3.x | Linguagem de programação |
-| go_router | ^14.6.3 | Navegação e rotas |
-| http | ^1.2.2 | Requisições à API |
-| cached_network_image | ^3.4.1 | Cache de imagens |
-| firebase_core | ^3.13.1 | Inicialização Firebase |
-| firebase_auth | ^5.5.2 | Autenticação |
-| cloud_firestore | ^5.6.6 | Banco de dados |
-| google_sign_in | ^6.2.2 | Login com Google |
+- 🔐 Autenticação com email/senha e Google (Firebase Auth)  
+- ⭐ Salvar times e jogadores favoritos (Cloud Firestore)  
+- 🏆 Listagem de ligas e times  
+- 📄 Página de detalhes de jogadores e equipes  
+- ⚖️ Comparação entre times  
+- 📊 Tabelas de classificação  
+- 📅 Próximos jogos e partidas  
+- 🔄 Navegação com rotas dinâmicas  
+- 📱 Interface nativa para Android  
 
 ---
 
-## ⚙️ Como Instalar e Rodar
+## 🛠️ Tecnologias Utilizadas
 
-### Pré-requisitos
+- 🐦 Flutter  
+- 🎯 Dart  
+- 🔀 go_router  
+- 🌐 http  
+- 🖼️ cached_network_image  
+- 🔥 Firebase Auth  
+- 🗄️ Cloud Firestore  
+- 🔑 Google Sign-In  
 
-- [Flutter SDK](https://flutter.dev/docs/get-started/install) instalado
-- Android Studio ou VS Code com extensão Flutter
-- Dispositivo Android ou emulador
+---
 
-### Passo a passo
+## 🌐 API Utilizada
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/futvision_mobile.git
-
-# 2. Entre na pasta do projeto
-cd futvision_mobile
-
-# 3. Instale as dependências
-flutter pub get
-
-# 4. Rode o app
-flutter run
-```
-
-### Gerar APK
-
-```bash
-flutter build apk --release
-# APK gerado em: build/app/outputs/flutter-apk/app-release.apk
-```
+- ⚽ TheSportsDB API  
+  → Utilizada para obter dados de futebol como ligas, times, jogadores e partidas  
 
 ---
 
 ## 🔥 Integração com Firebase
 
-O app utiliza dois serviços do Firebase:
-
-- **Authentication** — cadastro e login com email/senha e Google
-- **Cloud Firestore** — armazenamento dos times e jogadores favoritos do usuário
+- **Firebase Authentication** — cadastro e login com email/senha e Google  
+- **Cloud Firestore** — armazenamento dos times e jogadores favoritos do usuário  
 
 Estrutura do Firestore:
 ```
@@ -131,30 +73,97 @@ users/
 
 ---
 
-## 🌐 API Utilizada
+## 📦 Como Executar o Projeto
 
-**TheSportsDB** — [thesportsdb.com](https://www.thesportsdb.com)
+### 1. Clone o repositório
 
-| Endpoint | Uso |
-|----------|-----|
-| `all_leagues.php` | Listar todas as ligas de futebol |
-| `searchteams.php` | Buscar times por nome |
-| `lookupteam.php` | Detalhes de um time |
-| `searchplayers.php` | Buscar jogadores por nome ou time |
-| `lookupplayer.php` | Detalhes de um jogador |
-| `eventsnextleague.php` | Próximos jogos de uma liga |
-| `lookuptable.php` | Classificação de uma liga por temporada |
+```bash
+git clone https://github.com/EduardoColombari/FutVision_Mobile.git
+cd FutVision_Mobile
+```
+
+### 2. Instale as dependências
+
+Certifique-se de ter o **Flutter SDK** instalado na sua máquina. Em seguida, execute:
+
+```bash
+flutter pub get
+```
+
+### 3. Rode o app
+
+Conecte um dispositivo Android ou inicie um emulador e execute:
+
+```bash
+flutter run
+```
+
+### 4. Gerar APK
+
+Para gerar o APK de release:
+
+```bash
+flutter build apk --release
+```
+
+Os arquivos estarão em: `build/app/outputs/flutter-apk/app-release.apk`
 
 ---
 
-## 📦 Download do APK
+## 🤝 Como Contribuir
 
-> [Clique aqui para baixar o APK](https://github.com/seu-usuario/futvision_mobile/releases/latest)
+1. Faça um fork do projeto.  
+2. Crie uma nova branch com a sua feature: `git checkout -b minha-feature`.  
+3. Commit suas alterações: `git commit -m 'Adicionando nova feature'`.  
+4. Envie para a sua branch: `git push origin minha-feature`.  
+5. Abra um Pull Request no repositório original.
 
 ---
 
-## 👨‍💻 Autor
+## 📝 Licença
 
-**Eduardo Colombari Elias**  
-Estudante de Engenharia de Software — Uni-FACEF  
+Este projeto está sob a licença **MIT**. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
 
+---
+
+## 🏗️ Arquitetura da Aplicação
+
+A arquitetura do **FutVision Mobile** segue uma estrutura modular e organizada, utilizando os seguintes conceitos:
+
+- **Telas (`lib/screens`)**: Contém as telas principais da aplicação, como Home, Standings, Matches, Players, Compare, Favorites, About e Login.
+- **Widgets (`lib/widgets`)**: Componentes reutilizáveis, como `LeagueCard`, `TeamCard` e `FavoriteButton`.
+- **Serviços (`lib/services`)**: Responsável pelas chamadas à API externa e integração com Firebase (`football_api.dart`, `auth_service.dart`, `favorites_service.dart`).
+- **Utils (`lib/utils`)**: Funções utilitárias, como traduções de ligas, posições e países.
+- **Assets (`assets/`)**: Recursos estáticos como o logo da aplicação.
+
+### Diagrama da Arquitetura
+
+```mermaid
+graph TD
+    A[Usuário] -->|Não autenticado| B[LoginScreen]
+    B -->|Email/Senha ou Google| C[Firebase Auth]
+    C -->|Autenticado| D[Telas principais]
+    D -->|Navegação| E[go_router]
+    D -->|Dados de futebol| F[football_api.dart]
+    F -->|HTTP Requests| G[TheSportsDB API]
+    D -->|Favoritos| H[favorites_service.dart]
+    H -->|Leitura/Escrita| I[Cloud Firestore]
+```
+
+---
+
+## 🗂️ Boas Práticas de Versionamento
+
+O código-fonte do **FutVision Mobile** está versionado no GitHub. Para garantir um bom fluxo de trabalho, siga estas práticas:
+
+- **Commits descritivos**: Use mensagens claras e objetivas, como `git commit -m 'Adiciona tela de favoritos'`.
+- **Branches organizadas**: Crie branches específicas para cada feature ou correção, como `feature/firebase-auth`.
+- **Pull Requests**: Sempre abra um Pull Request para revisão antes de mesclar alterações na branch principal.
+
+---
+
+## 📊 Informações do Projeto
+
+| Faculdade  | Curso                  | Disciplina          | Autor             |
+|------------|------------------------|---------------------|-------------------|
+| Uni-FACEF  | Engenharia de Software | Dispositivos Móveis | Eduardo Colombari |
